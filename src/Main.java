@@ -2,6 +2,7 @@ public class Main {
 
   public static void main(String[] args) {
 
+
     //Colorarea grafurilor executie
     ColoringGraph objColor = new ColoringGraph(5);
 
