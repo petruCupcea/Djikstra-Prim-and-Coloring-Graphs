@@ -1,6 +1,14 @@
 public class PrimMST {
     // Number of vertices in the graph
-    private static final int V = 5;
+    int V;
+
+    PrimMST() {
+      this.V = 0;
+    }
+
+  PrimMST(int tempVertex) {
+    this.V = tempVertex;
+  }
 
     // A utility function to find the vertex with minimum key
     // value, from the set of vertices not yet included in MST
