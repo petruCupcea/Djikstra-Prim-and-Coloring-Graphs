@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.LinkedList;
 
 public class ColoringGraph extends ReadGraph {
-  //pentru culori
+  //Setam pentru stringurile date o culoare
   public static final String ANSI_RESET = "\u001B[0m";
   public static final String ANSI_RED = "\u001B[31m";
   public static final String ANSI_GREEN = "\u001B[32m";
@@ -46,7 +46,6 @@ public class ColoringGraph extends ReadGraph {
         if (result[i] != -1)
           available[result[i]] = false;
       }
-
       //Gasim prima culoare accesibila
       int color;
       for (color = 0; color < V; color++){
@@ -79,5 +78,7 @@ public class ColoringGraph extends ReadGraph {
     }
 
   }
+
+
 
 }
