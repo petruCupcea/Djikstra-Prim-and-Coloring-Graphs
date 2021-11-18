@@ -74,21 +74,21 @@ public class Main {
     objPrim.primMST(graphPrim);
 
     System.out.println();
-//
+
 //    /* Let us create the example graph discussed above */
-//    int graphDijkstra1[][] = new int[][] {
-//        { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
-//        { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
-//        { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
-//        { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
-//        { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-//        { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
-//        { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-//        { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-//        { 0, 0, 2, 0, 0, 0, 6, 7, 0 }
-//    };
-//    Djikstra objDjikstra1 = new Djikstra();
-//    objDjikstra1.dijkstra(graphDijkstra1, 0);
+    int graphDijkstra1[][] = new int[][] {
+        { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
+        { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
+        { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
+        { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
+        { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
+        { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
+        { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
+        { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
+        { 0, 0, 2, 0, 0, 0, 6, 7, 0 }
+    };
+    Djikstra objDjikstra1 = new Djikstra(9);
+    objDjikstra1.dijkstra(graphDijkstra1, 0);
 
     int graphDijkstra2[][] = new int[][] {
         { 0, 10, 0, 0, 0, 0, 0, 0, 0 , 0, 0},
@@ -103,7 +103,7 @@ public class Main {
         { 0, 0, 7, 0, 0, 0, 3, 0, 6 , 0, 12},
         { 0, 0, 6, 0, 0, 0, 0, 0, 0 , 12, 0}
     };
-    Djikstra objDjikstra2 = new Djikstra();
+    Djikstra objDjikstra2 = new Djikstra(11);
     objDjikstra2.dijkstra(graphDijkstra2, 0);
   }
 }
