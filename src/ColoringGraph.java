@@ -3,8 +3,8 @@ import java.util.*;
 import java.util.LinkedList;
 
 public class ColoringGraph extends ReadGraph {
+  //pentru culori
   public static final String ANSI_RESET = "\u001B[0m";
-  public static final String ANSI_BLACK = "\u001B[30m";
   public static final String ANSI_RED = "\u001B[31m";
   public static final String ANSI_GREEN = "\u001B[32m";
   public static final String ANSI_YELLOW = "\u001B[33m";
@@ -22,25 +22,23 @@ public class ColoringGraph extends ReadGraph {
   {
     int result[] = new int[V];
 
-    // Initialize all vertices as unassigned
+    // Initializam toate varfurile ca nealocate (fara culoare)
     Arrays.fill(result, -1);
 
-    // Assign the first color to first vertex
+    //Primului varf ii aloc o culoare (0 care e rosu)
     result[0]  = 0;
 
-    // A temporary array to store the available colors. False
-    // value of available[cr] would mean that the color cr is
-    // assigned to one of its adjacent vertices
+    //Un array temporar pentru a contine culorile valabile.
+    //adica available de [color] va fi false
     boolean available[] = new boolean[V];
 
-    // Initially, all colors are available
+    //Initial toate culorile sunt adevarate
     Arrays.fill(available, true);
 
-    // Assign colors to remaining V-1 vertices
+    //Ciclul de alocare a urmatoarelor varfuri de la 1 la V-1 (0 este deja alocat)
     for (int u = 1; u < V; u++)
     {
-      // Process all adjacent vertices and flag their colors
-      // as unavailable
+      //Trecem prin toate varfurile adiacente si setam in available ca false
       Iterator<Integer> it = adj[u].iterator() ;
       while (it.hasNext())
       {
@@ -49,20 +47,21 @@ public class ColoringGraph extends ReadGraph {
           available[result[i]] = false;
       }
 
-      // Find the first available color
-      int cr;
-      for (cr = 0; cr < V; cr++){
-        if (available[cr])
+      //Gasim prima culoare accesibila
+      int color;
+      for (color = 0; color < V; color++){
+        if (available[color])
           break;
       }
+      //Atribuim culoarea gasita in ciclul de mai sus
+      result[u] = color;
 
-      result[u] = cr; // Assign the found color
-
-      // Reset the values back to true for the next iteration
+      //Setam toate valorile true pentru urmatoarea iteratie
       Arrays.fill(available, true);
     }
 
-    // Afisarea
+    // Afisarea doua metode prima care prezinta culoarea prin cifre , doi prin culoare (doar pana la 6 culori)
+
 //    for (int u = 0; u < V; u++){
 //      System.out.println("Varful " + u + " ->  Culoarea " + result[u] );
 //    }
