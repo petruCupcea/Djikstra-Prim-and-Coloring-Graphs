@@ -3,6 +3,15 @@ import java.util.*;
 import java.util.LinkedList;
 
 public class ColoringGraph extends ReadGraph {
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_BLACK = "\u001B[30m";
+  public static final String ANSI_RED = "\u001B[31m";
+  public static final String ANSI_GREEN = "\u001B[32m";
+  public static final String ANSI_YELLOW = "\u001B[33m";
+  public static final String ANSI_BLUE = "\u001B[34m";
+  public static final String ANSI_PURPLE = "\u001B[35m";
+  public static final String ANSI_CYAN = "\u001B[36m";
+  public static final String ANSI_WHITE = "\u001B[37m";
 
 
   ColoringGraph(int v) {
@@ -54,7 +63,18 @@ public class ColoringGraph extends ReadGraph {
     }
 
     // print the result
-    for (int u = 0; u < V; u++)
-      System.out.println("Varful " + u + " ->  Culoarea " + result[u] );
+    for (int u = 0; u < V; u++){
+//      System.out.println("Varful " + u + " ->  Culoarea " + result[u] );
+    switch(result[u]) {
+      case 0: System.out.println(ANSI_RED + "Varful " + u + ANSI_RESET); break;
+      case 1: System.out.println(ANSI_BLUE + "Varful " + u + ANSI_RESET); break;
+      case 2: System.out.println(ANSI_GREEN + "Varful " + u + ANSI_RESET); break;
+      case 3: System.out.println(ANSI_PURPLE + "Varful " + u + ANSI_RESET); break;
+      case 4: System.out.println(ANSI_CYAN + "Varful " + u + ANSI_RESET); break;
+      case 5: System.out.println(ANSI_YELLOW + "Varful " + u + ANSI_RESET); break;
+      case 6: System.out.println(ANSI_WHITE + "Varful " + u + ANSI_RESET); break;
+     }
+    }
   }
+
 }
