@@ -122,6 +122,6 @@ public class Main {
         { 0, 0, 6, 0, 0, 0, 0, 0, 0 , 12, 0}
     };
     Djikstra objDjikstra2 = new Djikstra(11);
-    objDjikstra2.dijkstra(graphDijkstra2, 0);
+    objDjikstra2.dijkstra(graphDijkstra2, 2);
   }
 }

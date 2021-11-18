@@ -28,9 +28,9 @@ public class Djikstra {
   // A utility function to print the constructed distance array
   void printSolution(int dist[])
   {
-    System.out.println("Vertex \t\t Distance from Source");
+    System.out.println("Varful \t\t Distanta de la varful sursa");
     for (int i = 0; i < V; i++)
-      System.out.println(i + " \t\t " + dist[i]);
+      System.out.println(i + " \t\t      " + dist[i]);
   }
 
   // Function that implements Dijkstra's single source shortest path
