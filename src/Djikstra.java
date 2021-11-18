@@ -1,7 +1,7 @@
 public class Djikstra {
   // A utility function to find the vertex with minimum distance value,
   // from the set of vertices not yet included in shortest path tree
-  static final int V = 9;
+  static final int V = 11;
   int minDistance(int dist[], Boolean sptSet[])
   {
     // Initialize min value
