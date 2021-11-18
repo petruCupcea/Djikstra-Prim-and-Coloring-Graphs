@@ -63,8 +63,11 @@ public class ColoringGraph extends ReadGraph {
     }
 
     // print the result
-    for (int u = 0; u < V; u++){
+//    for (int u = 0; u < V; u++){
 //      System.out.println("Varful " + u + " ->  Culoarea " + result[u] );
+//    }
+
+    for (int u = 0; u < V; u++){
     switch(result[u]) {
       case 0: System.out.println(ANSI_RED + "Varful " + u + ANSI_RESET); break;
       case 1: System.out.println(ANSI_BLUE + "Varful " + u + ANSI_RESET); break;
