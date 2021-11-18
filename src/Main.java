@@ -4,27 +4,65 @@ public class Main {
 
 
     //Colorarea grafurilor executie
-    ColoringGraph objColor = new ColoringGraph(5);
+    ColoringGraph objColor = new ColoringGraph(17);
 
-    objColor.addEdge(0, 1);
-    objColor.addEdge(0, 2);
-    objColor.addEdge(1, 2);
-    objColor.addEdge(1, 3);
-    objColor.addEdge(2, 3);
-    objColor.addEdge(3, 4);
+    objColor.addEdge(0,1);
+    objColor.addEdge(0,2);
+    objColor.addEdge(0,3);
+    objColor.addEdge(0,6);
+    objColor.addEdge(1,2);
+    objColor.addEdge(1,3);
+    objColor.addEdge(1,13);
+    objColor.addEdge(1,14);
+    objColor.addEdge(1,15);
+    objColor.addEdge(2,3);
+    objColor.addEdge(2,4);
+    objColor.addEdge(2,6);
+    objColor.addEdge(3,6);
+    objColor.addEdge(4,5);
+    objColor.addEdge(4,9);
+    objColor.addEdge(4,13);
+    objColor.addEdge(5,6);
+    objColor.addEdge(5,7);
+    objColor.addEdge(5,8);
+    objColor.addEdge(6,7);
+    objColor.addEdge(6,8);
+    objColor.addEdge(7,8);
+    objColor.addEdge(9,10);
+    objColor.addEdge(9,11);
+    objColor.addEdge(9,12);
+    objColor.addEdge(10,11);
+    objColor.addEdge(10,12);
+    objColor.addEdge(11,12);
+    objColor.addEdge(13,14);
+    objColor.addEdge(13,15);
+    objColor.addEdge(13,16);
+    objColor.addEdge(14,15);
+    objColor.addEdge(14,16);
+    objColor.addEdge(15,16);
+
+
     System.out.println("Colorarea Grafului 1");
     objColor.greedyColoring();
 
     System.out.println();
 
-    ColoringGraph objColor1 = new ColoringGraph(5);
+    ColoringGraph objColor1 = new ColoringGraph(8);
     objColor1.addEdge(0, 1);
-    objColor1.addEdge(0, 2);
+    objColor1.addEdge(0, 5);
     objColor1.addEdge(1, 2);
-    objColor1.addEdge(1, 4);
-    objColor1.addEdge(2, 4);
-    objColor1.addEdge(4, 3);
-    System.out.println("Colorarea Grafului 2 ");
+    objColor1.addEdge(1, 5);
+    objColor1.addEdge(1, 6);
+    objColor1.addEdge(1, 7);
+    objColor1.addEdge(2, 3);
+    objColor1.addEdge(2, 7);
+    objColor1.addEdge(3, 4);
+    objColor1.addEdge(3, 6);
+    objColor1.addEdge(3, 7);
+    objColor1.addEdge(4, 5);objColor1.addEdge(0, 1);
+    objColor1.addEdge(5, 6);
+    objColor1.addEdge(6, 7);
+    System.out.println("Colorarea Grafului G6 ");
     objColor1.greedyColoring();
 
     System.out.println();
@@ -47,7 +85,7 @@ public class Main {
     objColor2.addEdge(7, 8);
     objColor2.addEdge(8, 9);
     objColor2.addEdge(9, 10);
-    System.out.println("Colorarea Grafului Nr. 7 ");
+    System.out.println("Colorarea Grafului Nr. G7 ");
     objColor2.greedyColoring();
 
     System.out.println();

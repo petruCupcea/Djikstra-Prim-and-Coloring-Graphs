@@ -62,7 +62,7 @@ public class ColoringGraph extends ReadGraph {
       Arrays.fill(available, true);
     }
 
-    // print the result
+    // Afisarea
 //    for (int u = 0; u < V; u++){
 //      System.out.println("Varful " + u + " ->  Culoarea " + result[u] );
 //    }
@@ -73,11 +73,12 @@ public class ColoringGraph extends ReadGraph {
       case 1: System.out.println(ANSI_BLUE + "Varful " + u + ANSI_RESET); break;
       case 2: System.out.println(ANSI_GREEN + "Varful " + u + ANSI_RESET); break;
       case 3: System.out.println(ANSI_PURPLE + "Varful " + u + ANSI_RESET); break;
-      case 4: System.out.println(ANSI_CYAN + "Varful " + u + ANSI_RESET); break;
-      case 5: System.out.println(ANSI_YELLOW + "Varful " + u + ANSI_RESET); break;
+      case 4: System.out.println( ANSI_YELLOW+ "Varful " + u + ANSI_RESET); break;
+      case 5: System.out.println(ANSI_CYAN + "Varful " + u + ANSI_RESET); break;
       case 6: System.out.println(ANSI_WHITE + "Varful " + u + ANSI_RESET); break;
      }
     }
+
   }
 
 }
