@@ -90,27 +90,7 @@ public class Main {
 
     System.out.println();
 
-    //Algoritmul lui Prim
-    /* Let us create the following graph
-        2 3
-        (0)--(1)--(2)
-        | / \ |
-        6| 8/ \5 |7
-        | /     \ |
-        (3)-------(4)
-            9         */
-    PrimMST objPrim = new PrimMST(5);
-    int graphPrim[][] = new int[][] {
-        { 0, 2, 0, 6, 0 },
-        { 2, 0, 3, 8, 5 },
-        { 0, 3, 0, 0, 7 },
-        { 6, 8, 0, 0, 9 },
-        { 0, 5, 7, 9, 0 }
-    };
-    // Print the solution
-    objPrim.primMST(graphPrim);
-    System.out.println();
-
+    //Algoritmul lui Prim pentru graful G7
     PrimMST objPrim2 = new PrimMST(11);
     int graphPrim2[][] = new int[][] {
         { 0, 10, 0, 0, 0, 0, 0, 0, 0 , 0, 0},
@@ -125,13 +105,10 @@ public class Main {
         { 0, 0, 7, 0, 0, 0, 3, 0, 6 , 0, 12},
         { 0, 0, 6, 0, 0, 0, 0, 0, 0 , 12, 0}
     };
-    // Print the solution
     objPrim2.primMST(graphPrim2);
     System.out.println();
 
-
-
-//    /* Let us create the example graph discussed above */
+    //Algoritmul lui Dijkstra pentru G6
     int graphDijkstra1[][] = new int[][] {
         { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
         { 4, 0, 8, 0, 0, 0, 0, 11, 0 },
@@ -146,6 +123,7 @@ public class Main {
     Djikstra objDjikstra1 = new Djikstra(9);
     objDjikstra1.dijkstra(graphDijkstra1, 0);
 
+    //Algoritmul lui Dijkstra pentru G7
     int graphDijkstra2[][] = new int[][] {
         { 0, 10, 0, 0, 0, 0, 0, 0, 0 , 0, 0},
         { 10, 0, 15, 8, 0, 0, 0, 0, 0 , 0, 0},

@@ -1,5 +1,4 @@
 public class PrimMST {
-    // Number of vertices in the graph
     int V;
 
     PrimMST() {

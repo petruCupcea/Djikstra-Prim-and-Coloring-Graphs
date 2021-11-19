@@ -1,81 +1,69 @@
 public class Djikstra {
-  // A utility function to find the vertex with minimum distance value,
-  // from the set of vertices not yet included in shortest path tree
   int V ;
-
-  Djikstra() {
-     this.V = 0;
-  }
 
   Djikstra(int tempVertex) {
     this.V = tempVertex;
   }
 
-  int minDistance(int dist[], Boolean sptSet[])
+  int minDistance(int[] dist, Boolean[] boolSet)
   {
-    // Initialize min value
+    // Initializam valoarea minimala si indexul lui
     int min = Integer.MAX_VALUE, min_index = -1;
 
-    for (int v = 0; v < V; v++)
-      if (sptSet[v] == false && dist[v] <= min) {
-        min = dist[v];
-        min_index = v;
+    //i este varful in cazul dat
+    for (int i = 0; i < V; i++)
+      if ( !boolSet[i]  && dist[i] <= min) {
+        min = dist[i];
+        min_index = i;
       }
-
     return min_index;
   }
 
-  // A utility function to print the constructed distance array
-  void printSolution(int dist[])
+
+  // functia de afisare
+  void printSolution(int[] dist)
   {
     System.out.println("Varful \t\t Distanta de la varful sursa");
     for (int i = 0; i < V; i++)
       System.out.println(i + " \t\t      " + dist[i]);
   }
 
-  // Function that implements Dijkstra's single source shortest path
-  // algorithm for a graph represented using adjacency matrix
-  // representation
-  void dijkstra(int graph[][], int src)
+
+  void dijkstra(int[][] graph, int src)
   {
-    int dist[] = new int[V]; // The output array. dist[i] will hold
-    // the shortest distance from src to i
+    int[] dist = new int[V];
 
-    // sptSet[i] will true if vertex i is included in shortest
-    // path tree or shortest distance from src to i is finalized
-    Boolean sptSet[] = new Boolean[V];
+    Boolean[] boolSet = new Boolean[V];
 
-    // Initialize all distances as INFINITE and stpSet[] as false
+    //Initializam dist[] ca infinit(max_int) si boolSet[] ca false
     for (int i = 0; i < V; i++) {
       dist[i] = Integer.MAX_VALUE;
-      sptSet[i] = false;
+      boolSet[i] = false;
     }
 
-    // Distance of source vertex from itself is always 0
+    //Distanta de la sursa va fi tot timpul 0
     dist[src] = 0;
 
-    // Find shortest path for all vertices
-    for (int count = 0; count < V - 1; count++) {
-      // Pick the minimum distance vertex from the set of vertices
-      // not yet processed. u is always equal to src in first
-      // iteration.
-      int u = minDistance(dist, sptSet);
+    //Gasim ce-a mai scurta distanta pentru fiecare varf
+    for (int j = 0; j < V - 1; j++) {
+      // u este varful cu cea mai mica greutate din functia minDistance
+      int u = minDistance(dist, boolSet);
 
-      // Mark the picked vertex as processed
-      sptSet[u] = true;
+      //Marcam varful dat ca true
+      boolSet[u] = true;
 
-      // Update dist value of the adjacent vertices of the
-      // picked vertex.
+      //update la dist
       for (int v = 0; v < V; v++)
 
-        // Update dist[v] only if is not in sptSet, there is an
-        // edge from u to v, and total weight of path from src to
-        // v through u is smaller than current value of dist[v]
-        if (!sptSet[v] && graph[u][v] != 0 && dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
+        // facem update la dist doar daca indeplineste urmatoarele conditii
+        // 1 in boolSet este setat ca false
+        // 2 in graph este diferit de 0
+        // 3 dist[u] este diferit de infinit
+        // 4 dist[u] + graph[u][v] < dist[v] (pentru prima iteratie dist[v] este infinit)
+        if (!boolSet[v] && graph[u][v] != 0 && dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
           dist[v] = dist[u] + graph[u][v];
     }
 
-    // print the constructed distance array
     printSolution(dist);
   }
 }
